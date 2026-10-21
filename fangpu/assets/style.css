@@ -1,0 +1,163 @@
+:root{--bg:#06131b;--bg2:#0a1b24;--ink:#edf8fa;--muted:#88a5ae;--cyan:#20c7d9;--line:rgba(136,185,197,.17);--max:1240px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope","Noto Sans SC",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.site-header{position:fixed;z-index:50;top:0;left:0;width:100%;height:88px;padding:0 clamp(24px,5vw,72px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:.35s}
+.site-header.scrolled{height:72px;background:rgba(6,19,27,.88);backdrop-filter:blur(18px);border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:38px;height:38px;object-fit:contain}
+.brand span{display:flex;flex-direction:column}
+.brand strong{font:600 17px "Noto Sans SC";letter-spacing:.12em}
+.brand small{font-size:8px;letter-spacing:.19em;color:#8fc4cf;margin-top:3px}
+.site-header nav{display:flex;align-items:center;gap:34px;font-size:14px}
+.site-header nav>a:not(.nav-cta){color:#b8cbd1;transition:.2s}
+.site-header nav>a:hover{color:#fff}
+.nav-cta{padding:12px 19px;border:1px solid rgba(32,199,217,.6);color:#dffcff}
+.menu-btn{display:none;background:none;border:0;width:40px;height:40px}
+.menu-btn span{display:block;width:22px;height:1px;background:#fff;margin:7px auto}
+.hero{height:min(900px,100svh);min-height:720px;position:relative;display:flex;align-items:center;padding:100px max(6vw,calc((100vw - var(--max))/2))}
+.hero-image{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,15,22,.97) 0%,rgba(4,15,22,.74) 39%,rgba(4,15,22,.08) 74%),url("hero-led.png") center/cover no-repeat}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(78,187,208,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(78,187,208,.05) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(90deg,#000,transparent 65%)}
+.hero-content{position:relative;z-index:2;max-width:690px}
+.eyebrow{font-size:12px;letter-spacing:.25em;color:#8adce5}
+.eyebrow span{display:inline-block;width:34px;height:1px;background:var(--cyan);vertical-align:middle;margin-right:13px}
+.hero h1{font:500 clamp(56px,7vw,98px)/1.06 "Noto Sans SC";letter-spacing:-.055em;margin:26px 0}
+.hero h1 em,.contact h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1px #67d1df}
+.hero-copy{font-size:17px;line-height:1.9;color:#a9bec5;max-width:570px}
+.hero-actions{display:flex;gap:15px;margin-top:38px}
+.btn{min-width:142px;height:50px;padding:0 24px;display:inline-flex;align-items:center;justify-content:center;gap:24px;font-size:14px;transition:.25s}
+.btn.primary{background:var(--cyan);color:#041217;font-weight:600}
+.btn.primary:hover{background:#72e4ed;transform:translateY(-2px)}
+.btn.ghost{border:1px solid rgba(255,255,255,.22)}
+.btn.ghost:hover{border-color:#fff}
+.hero-spec{position:absolute;z-index:2;right:max(5vw,calc((100vw - var(--max))/2));bottom:54px;display:flex}
+.hero-spec>div{padding:0 28px;border-left:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column}
+.hero-spec strong{font-size:24px;font-weight:500}
+.hero-spec sup{font-size:12px}
+.hero-spec span{font-size:11px;color:#95aeb6;margin-top:6px}
+.scroll-cue{position:absolute;z-index:2;bottom:48px;left:35px;writing-mode:vertical-rl;font-size:8px;letter-spacing:.22em;color:#72909a}
+.scroll-cue span{display:inline-block;width:1px;height:42px;background:var(--cyan);margin-bottom:12px}
+.section{max-width:var(--max);margin:auto;padding:130px 0}
+.section-tag{font-size:10px;letter-spacing:.24em;color:#5f8490;border-top:1px solid var(--line);padding-top:14px}
+.about-head,.section-title{display:grid;grid-template-columns:1.25fr .75fr;gap:90px;align-items:end;margin:55px 0 80px}
+.about h2,.section-title h2,.strength h2,.applications h2{font:500 clamp(38px,4.5vw,65px)/1.22 "Noto Sans SC";letter-spacing:-.04em;margin:0}
+.about-head p,.section-title p,.strength-copy>p{color:var(--muted);line-height:2;font-size:16px;margin:0}
+.about-panels{display:grid;grid-template-columns:1.55fr repeat(3,1fr);border:1px solid var(--line)}
+.about-panels article{padding:38px;border-right:1px solid var(--line);min-height:300px}
+.about-panels article:last-child{border:0}
+.statement{background:linear-gradient(145deg,rgba(18,93,108,.27),rgba(6,19,27,.2))}
+.statement>span{font-size:10px;letter-spacing:.2em;color:var(--cyan)}
+.statement blockquote{font:400 27px/1.6 "Noto Sans SC";margin:45px 0}
+.statement p{color:#6b8b94;font-size:12px}
+.capability{display:flex;flex-direction:column}
+.capability .number,.product-card>span{font-size:11px;color:var(--cyan)}
+.capability h3{margin-top:auto;font-size:19px}
+.capability p{color:var(--muted);font-size:13px;line-height:1.8}
+.products{padding-top:70px}
+.product-feature{display:grid;grid-template-columns:1.45fr .85fr;background:#0b202a;border:1px solid var(--line);min-height:520px}
+.product-photo{background:center/cover no-repeat}
+.product-photo.uv{background-image:linear-gradient(90deg,transparent 70%,#0b202a),url("uv-led.png")}
+.product-copy{padding:60px;display:flex;flex-direction:column;justify-content:center}
+.product-index{align-self:flex-end;color:#466b76;font-size:12px}
+.product-copy h3{font:500 35px "Noto Sans SC";margin:15px 0}
+.product-copy>p:not(.eyebrow){color:var(--muted);line-height:1.9}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}
+.chips span{border:1px solid var(--line);padding:8px 10px;font-size:10px;color:#9ec6cf}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0}
+.product-card{padding:38px 42px;min-height:275px;border-right:1px solid var(--line);position:relative;overflow:hidden}
+.product-card:last-child{border:0}
+.product-card:after{content:"";position:absolute;width:140px;height:140px;border:1px solid rgba(32,199,217,.11);border-radius:50%;right:-50px;bottom:-55px;box-shadow:0 0 50px rgba(32,199,217,.06)}
+.product-card h3{font-size:21px;margin:47px 0 7px}
+.product-card p{color:#6f949e;font-size:13px}
+.product-card ul{display:flex;list-style:none;gap:16px;padding:16px 0 0;margin:0;border-top:1px solid var(--line);font-size:10px;color:#9fb6bd}
+.applications{height:720px;position:relative;overflow:hidden}
+.application-image{position:absolute;inset:0;background:url("spectrum-led.png") center/cover}
+.application-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,14,20,.96),rgba(5,16,23,.65) 50%,rgba(5,16,23,.08)),linear-gradient(0deg,var(--bg),transparent 25%,transparent 80%,var(--bg))}
+.application-content{position:relative;z-index:1;margin:auto}
+.application-content .section-tag{width:100%}
+.applications h2{margin:75px 0 55px}
+.app-list{display:grid;grid-template-columns:repeat(2,220px);gap:0}
+.app-list span{border-bottom:1px solid var(--line);padding:16px 0;color:#b4cad0;font-size:13px}
+.strength-layout{display:grid;grid-template-columns:1fr 1fr;gap:110px;margin-top:75px}
+.strength-copy>p{margin:32px 0}
+.text-link{display:inline-flex;gap:50px;padding:15px 0;border-bottom:1px solid var(--cyan);font-size:13px}
+.process{border-top:1px solid var(--line)}
+.process>div{display:grid;grid-template-columns:50px 1fr;padding:26px 8px;border-bottom:1px solid var(--line)}
+.process b{font-size:10px;color:var(--cyan);font-weight:400}
+.process span{display:flex;justify-content:space-between;align-items:center}
+.process strong{font-size:16px}
+.process small{color:#6a8992}
+.contact{position:relative;min-height:590px;border-top:1px solid var(--line);display:grid;grid-template-columns:1.3fr .7fr;align-items:center;overflow:hidden}
+.contact-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(16,161,181,.2),transparent 65%);left:-200px;top:20px}
+.contact-main,.contact-info{position:relative;z-index:1}
+.contact h2{font:500 clamp(38px,4.5vw,64px)/1.3 "Noto Sans SC";margin:20px 0 45px}
+.contact-info{border-left:1px solid var(--line);padding-left:65px}
+.contact-info>div{margin:45px 0}
+.contact-info span{display:block;font-size:10px;letter-spacing:.2em;color:#577b86;margin-bottom:12px}
+.contact-info a{font-size:25px}
+.contact-info p{font-size:14px;line-height:1.8;color:#b0c4ca}
+footer{max-width:var(--max);margin:auto;padding:35px 0 55px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:#627f88}
+footer .brand img{width:31px;height:31px}
+footer p,footer>small{font-size:10px;letter-spacing:.08em}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+/* Enhanced typography and image-led cards */
+.hero h1{font-family:system-ui,-apple-system,"Microsoft YaHei UI","Microsoft YaHei",sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.045em}
+.hero h1 em{font:inherit;font-style:normal;color:#64e0eb;-webkit-text-stroke:0;text-shadow:0 0 28px rgba(32,199,217,.18)}
+.about-panels article{padding:0;min-height:390px;overflow:hidden}
+.panel-image{display:block;width:100%;height:155px;object-fit:cover;border-bottom:1px solid var(--line);filter:saturate(.86)}
+.panel-body{padding:28px 30px}
+.statement .panel-body>span{font-size:10px;letter-spacing:.2em;color:var(--cyan)}
+.statement blockquote{font:600 25px/1.55 "Microsoft YaHei UI","Noto Sans SC",sans-serif;margin:24px 0}
+.capability{display:block}
+.capability .number,.product-card-body>span{font-size:11px;color:var(--cyan)}
+.capability h3{margin-top:35px}
+.product-card{padding:0;min-height:445px}
+.product-card:after{display:none}
+.product-card-image{width:100%;height:220px;display:block;object-fit:cover;border-bottom:1px solid var(--line);transition:transform .55s ease}
+.product-card:hover .product-card-image{transform:scale(1.035)}
+.product-card-body{padding:28px 34px}
+.product-card h3{margin:22px 0 7px}
+@media(max-width:900px){.site-header{height:72px;padding:0 22px}
+.menu-btn{display:block;z-index:2}
+.site-header nav{position:absolute;top:0;right:0;width:min(80vw,360px);height:100vh;background:#071a23;flex-direction:column;align-items:flex-start;padding:110px 45px;transform:translateX(100%);transition:.3s}
+.site-header nav.open{transform:none}
+.site-header nav a{font-size:18px}
+.hero{min-height:760px;height:100svh;padding:90px 24px 130px;align-items:center}
+.hero-image{background:linear-gradient(90deg,rgba(4,15,22,.94),rgba(4,15,22,.55)),url("hero-led.png") 63% center/cover}
+.hero h1{font-size:51px}
+.hero-spec{left:24px;right:auto;bottom:35px;width:calc(100% - 48px);justify-content:space-between}
+.hero-spec>div{padding:0 14px}
+.scroll-cue{display:none}
+.section{padding:90px 24px}
+.about-head,.section-title{grid-template-columns:1fr;gap:28px;margin:45px 0}
+.about-panels{grid-template-columns:1fr}
+.about-panels article{border-right:0;border-bottom:1px solid var(--line);min-height:220px}
+.product-feature{grid-template-columns:1fr}
+.product-photo{height:390px}
+.product-photo.uv{background-image:linear-gradient(0deg,#0b202a,transparent 35%),url("uv-led.png")}
+.product-copy{padding:38px 28px}
+.product-grid{grid-template-columns:1fr}
+.product-card{border-right:0;border-bottom:1px solid var(--line)}
+.applications{height:760px}
+.application-content{padding-top:120px}
+.app-list{grid-template-columns:repeat(2,1fr)}
+.strength-layout{grid-template-columns:1fr;gap:55px;margin-top:48px}
+.contact{grid-template-columns:1fr;padding-top:110px}
+.contact-info{border-left:0;border-top:1px solid var(--line);padding:10px 0 0}
+footer{margin:0 24px;align-items:flex-start;gap:24px;flex-direction:column}
+}
+@media(max-width:520px){.brand strong{font-size:15px}
+.brand small{font-size:7px}
+.hero h1{font-size:44px}
+.hero-copy{font-size:15px}
+.hero-spec strong{font-size:19px}
+.hero-spec span{font-size:9px}
+.about h2,.section-title h2,.strength h2,.applications h2{font-size:36px}
+.product-photo{height:310px}
+.app-list{grid-template-columns:1fr}
+.applications{height:850px}
+.process span{align-items:flex-start;flex-direction:column;gap:7px}
+.contact h2{font-size:36px}
+}
